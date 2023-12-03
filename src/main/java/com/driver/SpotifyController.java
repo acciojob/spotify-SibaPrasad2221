@@ -22,6 +22,7 @@ public class SpotifyController {
     public String createArtist(@RequestParam(name = "name") String name){
         //create the artist with given name
         spotifyService.createArtist(name);
+
         return "Success";
     }
 
@@ -30,6 +31,7 @@ public class SpotifyController {
         //If the artist does not exist, first create an artist with given name
         //Create an album with given title and artist
         spotifyService.createAlbum(title,artistName);
+
         return "Success";
     }
 
@@ -66,7 +68,7 @@ public class SpotifyController {
         //If the user does not exist, throw "User does not exist" exception
         //If the playlist does not exists, throw "Playlist does not exist" exception
         // Return the playlist after updating
-        spotifyService.findPlaylist(mobile, playlistTitle);
+        spotifyService.findPlaylist(mobile,playlistTitle);
         return "Success";
     }
 
@@ -78,7 +80,7 @@ public class SpotifyController {
         //If the user does not exist, throw "User does not exist" exception
         //If the song does not exist, throw "Song does not exist" exception
         //Return the song after updating
-        spotifyService.likeSong(mobile, songTitle);
+        spotifyService.likeSong(mobile,songTitle);
         return "Success";
     }
 
@@ -86,11 +88,13 @@ public class SpotifyController {
     public String mostPopularArtist(){
         //Return the artist name with maximum likes
         return spotifyService.mostPopularArtist();
+
     }
 
     @GetMapping("/popular-song")
     public String mostPopularSong(){
         //return the song title with maximum likes
         return spotifyService.mostPopularSong();
+
     }
 }
