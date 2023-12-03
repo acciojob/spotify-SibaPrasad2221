@@ -12,15 +12,15 @@ public class SpotifyService {
     SpotifyRepository spotifyRepository = new SpotifyRepository();
 
     public User createUser(String name, String mobile){
-
+        return spotifyRepository.createUser(name,mobile);
     }
 
     public Artist createArtist(String name) {
-
+        return spotifyRepository.createArtist(name);
     }
 
     public Album createAlbum(String title, String artistName) {
-
+        return spotifyRepository.createAlbum(title,artistName);
     }
 
     public Song createSong(String title, String albumName, int length) throws Exception {
