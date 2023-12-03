@@ -38,16 +38,16 @@ public class SpotifyRepository {
     }
 
     public User createUser(String name, String mobile) {
-        User added_user = new User(name, mobile);
-        users.add(added_user);
-        return added_user;
+        User newUser = new User(name,mobile);
+        users.add(newUser);
+        return newUser;
     }
 
     public Artist createArtist(String name) {
-        Artist new_artist= new Artist(name);
-        //in constructor asdefault like set to zero
-        artists.add(new_artist);
-        return new_artist;
+        Artist newArtist = new Artist(name);
+        newArtist.setLikes(0);
+        artists.add(newArtist);
+        return newArtist;
     }
 
     public Album createAlbum(String title, String artistName) {
