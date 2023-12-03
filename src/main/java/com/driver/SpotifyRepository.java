@@ -368,6 +368,6 @@ public class SpotifyRepository {
         if (song == null)
             return null;
         else
-            return song.getTitle()
+            return song.getTitle();
     }
 }
